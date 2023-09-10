@@ -7,6 +7,7 @@ import water from "../canvas/water";
 import wall from "../canvas/wall";
 import steel from "../canvas/steel";
 import tank from "../canvas/tank";
+import utils from "../utils";
 
 export default class extends modelAbstract implements IModel{
     public canvas: ICanvas = tank;
@@ -40,7 +41,7 @@ export default class extends modelAbstract implements IModel{
                     x++
                     break;
             }
-            if(this.isTouch(x,y)===true){
+            if(utils.isModelTouch(x,y)||utils.isCanvasTouch(x,y)){
                 this.randomDirection()
             }else{
                 this.x = x
@@ -49,19 +50,6 @@ export default class extends modelAbstract implements IModel{
             }
         }
         super.draw()
-    }
-    //碰撞检测
-    protected isTouch(x:number,y:number):boolean{
-        if(x<0||x+this.width>config.canvas.width||y<0||y+this.height>config.canvas.height) return true;
-        const models = [...water.models,...wall.models,...steel.models]
-        return models.some(model=>{
-           const state =
-           x+this.width<=model.x||
-           x>=model.x+model.width||
-           y+this.height<=model.y||
-           y>=model.y+model.height;
-           return !state
-        })
     }
     image(){
         let direction = this.name+_.upperFirst(this.direction)

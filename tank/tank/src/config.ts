@@ -7,6 +7,11 @@ import tankRight from "./static/images/tank/right.gif";
 import tankTop from "./static/images/tank/top.gif";
 import tankBottom from "./static/images/tank/bottom.gif";
 import bullet from "./static/images/bullet/bullet.jpg";
+import boss from "./static/images/boss/boss.png";
+import playTop from './static/images/player/top.gif';
+import playBottom from './static/images/player/bottom.gif';
+import playLeft from './static/images/player/left.gif';
+import playRight from './static/images/player/right.gif';
 export default {
     timeout:20,
     canvas:{
@@ -41,6 +46,11 @@ export default {
         wall,
         water,
         steel,
-        bullet
+        bullet,
+        boss,
+        playTop,
+        playRight,
+        playBottom,
+        playLeft
     }
 }

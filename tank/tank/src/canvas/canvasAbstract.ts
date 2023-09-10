@@ -28,15 +28,21 @@ export default abstract class canvasAbstract {
     //生成模型实例
     protected createModels() {
         position.getCollection(this.num()).forEach(({ x, y }) => {
-            const model = this.model();
+            const model = this.model() as ModelContructor;
             const instance = new model(x, y)
             this.models.push(instance)
         })
     }
 
-    //渲染模型
-    protected renderModels() {
+    //渲染模型到画布上
+    public renderModels() {
+        this.ctx.clearRect(0, 0, config.canvas.width, config.canvas.height)
         this.models.forEach((model) => model.render())
+    }
+
+    //移除模型
+    public removeModel(model:IModel) {
+        this.models = this.models.filter((m) => m !== model)
     }
 
 }
