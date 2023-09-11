@@ -1,1 +1,1 @@
-body{background-color:#000;width:100vw;height:100vh;display:flex;justify-content:center;align-items:center}body #app{background-color:#333;position:relative}body #app canvas{position:absolute}
+body{background-color:#000;width:100vw;height:100vh;display:flex;justify-content:center;align-items:center}body #app{background-color:#000;background-image:url("/src/static/images/cover/cover.png");background-size:cover;background-position:center;cursor:pointer;border:solid 10px #eee;box-sizing:content-box;position:relative}body #app canvas{position:absolute}

@@ -12,6 +12,10 @@ body{
   align-items: center;
   #app{
     background-color: #000;
+    background-image: url('/src/static/images/cover/cover.png');
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
     border: solid 10px #eee;
     box-sizing: content-box;
     position: relative;

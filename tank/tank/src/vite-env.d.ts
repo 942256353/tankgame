@@ -18,6 +18,7 @@ interface IModel{
     width:number,
     direction:string,
     destory():void,
+    
 }
 
 interface ICanvas{
@@ -26,4 +27,5 @@ interface ICanvas{
     ctx:CanvasRenderingContext2D,
     removeModel(model:IModel):void,
     renderModels():void,
+    stop?():void
 }
